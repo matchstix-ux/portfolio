@@ -1,127 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Paul F Lukens — Writing Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      background: #111;
-      color: #f6f6f6;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 2rem 0;
+    :root{
+      --bg:#0e0e0f; --surface:#171719; --text:#e9e9ea; --muted:#b9b9bd;
+      --accent:#d99b62; --line:#2a2a2d;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 2rem;
-      background: #181818;
-      border-radius: 18px;
-      box-shadow: 0 4px 20px #0005;
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
     }
-    h1, h2 {
-      font-weight: 600;
-      color: #f6f6f6;
-      margin-bottom: 0.5em;
-    }
-    h1 {
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      margin-top: 0;
-    }
-    p, li {
-      font-size: 1.11rem;
-      color: #dbdbdb;
-    }
-    ul {
-      padding-left: 1.2em;
-      margin-bottom: 1.5em;
-    }
-    a {
-      color: #de9c5a;
-      text-decoration: none;
-      border-bottom: 1px solid #de9c5a33;
-      transition: color 0.2s;
-    }
-    a:hover {
-      color: #fff;
-      border-bottom: 1px solid #fff;
-    }
-    .contact {
-      margin-top: 2.5em;
-      font-size: 1rem;
-    }
-    .linkedin {
-      margin-left: 1em;
-      font-size: 1.07em;
-      color: #6aa6e9;
-    }
-    @media (max-width: 700px) {
-      .container {
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 1.6rem;
-      }
-    }
+    .wrap{max-width:860px; margin:0 auto; padding:40px 20px;}
+    header{margin-bottom:28px}
+    h1{font-size:34px; margin:0 0 8px; letter-spacing:.2px}
+    .bio{color:var(--muted); margin:0 0 20px}
+    .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid #0000}
+    .contact a:hover{border-bottom:1px solid var(--accent)}
+    nav{margin:22px 0 34px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 0}
+    nav a{color:var(--muted); text-decoration:none; margin-right:16px; font-size:14px;}
+    nav a:hover{color:var(--text)}
+    section{padding:18px 0 6px; border-top:1px solid var(--line)}
+    h2{font-size:18px; letter-spacing:.3px; text-transform:uppercase; color:#fff; margin:0 0 12px}
+    ul.list{list-style:none; padding:0; margin:0}
+    .item{padding:12px 0; display:flex; gap:12px; align-items:flex-start}
+    .bullet{width:8px; height:8px; margin-top:9px; border-radius:999px; background:var(--accent); flex:0 0 8px; opacity:.85}
+    .item a.title{color:var(--text); text-decoration:none; border-bottom:1px solid #0000; transition:border-color .18s ease;}
+    .item a.title:hover{border-bottom:1px solid var(--text)}
+    .dek{color:var(--muted); font-size:14px; margin-top:4px}
+    footer{border-top:1px solid var(--line); margin-top:28px; padding:14px 0; color:var(--muted); font-size:13px}
+    @media (max-width:600px){ h1{font-size:26px} }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Paul F Lukens</h1>
-    <p>
-      Paul F Lukens is a seasoned content creator with 9+ years of experience producing high-performing eCommerce content—including product reviews, buying guides, and multimedia campaigns—for leading brands in the cigar and retail industry. A versatile storyteller, Paul combines editorial integrity with data-driven strategy to create engaging, SEO-focused content that resonates with both enthusiasts and newcomers. He brings a collaborative, results-oriented approach to every project, with a proven record of elevating brand voice and driving audience engagement across multiple platforms.
-    </p>
+  <div class="wrap">
+    <header>
+      <h1>Paul F Lukens</h1>
+      <!-- Bio: restored verbatim -->
+      <p class="bio">
+        Paul F Lukens is a seasoned copywriter with 9+ years of experience producing high-performing eCommerce content—including product reviews, buying guides, and multimedia campaigns—for leading brands in the cigar and retail industry. A versatile storyteller, Paul combines editorial integrity with data-driven strategy to create engaging, SEO-focused content that resonates with both enthusiasts and newcomers. He brings a collaborative, results-oriented approach to every project, with a proven record of elevating brand voice and driving audience engagement across multiple platforms.
+      </p>
+      <p class="contact">
+        <b>Contact:</b> <a href="mailto:lukens.pf@gmail.com">lukens.pf@gmail.com</a>
+        &nbsp;|&nbsp; <a href="https://linkedin.com/in/your-link" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </header>
 
-    <h2>Portfolio</h2>
-    <ul>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-partagas-y-nada-mas" target="_blank">
-          Quick Ash: Partagas Y Nada Mas
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-perdomo-legacy-nicaraguan-shade-grown" target="_blank">
-          Quick Ash: Perdomo Legacy Nicaraguan Shade Grown
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-la-aurora-family-creed-fuerte-sol" target="_blank">
-          Quick Ash: La Aurora Family Creed Fuerte Sol
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/cigars-and-red-wine-pairings" target="_blank">
-          Cigars and Red Wine Pairings
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/connecticut-shade-cigars-guide" target="_blank">
-          Connecticut Shade Cigars Guide
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-big-ring-gauge-cigars" target="_blank">
-          5 Things About Big Ring Gauge Cigars
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-lancero-cigars" target="_blank">
-          5 Things About Lancero Cigars
-        </a>
-      </li>
-      <li>
-        <a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/barrel-aged-cigars" target="_blank">
-          Barrel-Aged Cigars Guide
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <a href="#reviews">Reviews</a>
+      <a href="#buying-guides">Buying Guides</a>
+      <a href="#educational">Educational</a>
+    </nav>
 
-    <div class="contact">
-      <b>Contact:</b> <a href="mailto:lukens.pf@gmail.com">lukens.pf@gmail.com</a>
-      <span class="linkedin">| <a href="https://linkedin.com/in/your-link" target="_blank">LinkedIn</a></span>
-    </div>
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <h2>Reviews</h2>
+      <ul class="list">
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-partagas-y-nada-mas">
+               Quick Ash: Partagas Y Nada Mas
+            </a>
+            <div class="dek">Clean, contemporary Partagas profile—focused, modern construction and flavor pacing.</div>
+          </div>
+        </li>
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-perdomo-legacy-nicaraguan-shade-grown">
+               Quick Ash: Perdomo Legacy Nicaraguan Shade Grown
+            </a>
+            <div class="dek">Shade-grown balance with Perdomo’s signature polish; approachable, well-structured.</div>
+          </div>
+        </li>
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-la-aurora-family-creed-fuerte-sol">
+               Quick Ash: La Aurora Family Creed Fuerte Sol
+            </a>
+            <div class="dek">Sun-forward intensity with La Aurora craftsmanship; dialed-in strength and detail.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- BUYING GUIDES -->
+    <section id="buying-guides">
+      <h2>Buying Guides</h2>
+      <ul class="list">
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/cigars-and-red-wine-pairings">
+               Cigars and Red Wine Pairings
+            </a>
+            <div class="dek">Practical pairings by body and flavor families—avoids gimmicks, stays useful.</div>
+          </div>
+        </li>
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/connecticut-shade-cigars-guide">
+               Connecticut Shade Cigars Guide
+            </a>
+            <div class="dek">What “shade” actually means, where it works, and brands that execute it well.</div>
+          </div>
+        </li>
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/barrel-aged-cigars">
+               Barrel-Aged Cigars
+            </a>
+            <div class="dek">When barrel aging adds nuance vs. when it’s a label—how to tell the difference.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EDUCATIONAL -->
+    <section id="educational">
+      <h2>Educational</h2>
+      <ul class="list">
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-big-ring-gauge-cigars">
+               5 Things About Big Ring Gauge Cigars
+            </a>
+            <div class="dek">Trade-offs in combustion, flavor concentration, and why larger isn’t always “more.”</div>
+          </div>
+        </li>
+        <li class="item">
+          <span class="bullet" aria-hidden="true"></span>
+          <div>
+            <a class="title" target="_blank" rel="noopener"
+               href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-lancero-cigars">
+               5 Things About Lancero Cigars
+            </a>
+            <div class="dek">Wrapper-to-filler ratio, burn management, and who should reach for a lancero.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Paul F Lukens
+    </footer>
   </div>
 </body>
 </html>
