@@ -18,8 +18,6 @@
     header{margin-bottom:28px}
     h1{font-size:34px; margin:0 0 8px; letter-spacing:.2px}
     .bio{color:var(--muted); margin:0 0 18px}
-    .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid #0000}
-    .contact a:hover{border-bottom:1px solid var(--accent)}
     nav{margin:22px 0 30px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 0}
     nav a{color:var(--muted); text-decoration:none; margin-right:16px; font-size:14px;}
     nav a:hover{color:var(--text)}
@@ -43,13 +41,25 @@
     .thumb{display:block; width:100%; height:0; padding-bottom:56%; background:#0b0b0c; position:relative; overflow:hidden}
     .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
     .card-body{padding:14px 14px 16px}
-    .title{
-      margin:0 0 6px; font-weight:600; line-height:1.35; font-size:16px;
-    }
+    .title{margin:0 0 6px; font-weight:600; line-height:1.35; font-size:16px;}
     .title a{color:var(--text); text-decoration:none; border-bottom:1px solid #0000}
     .title a:hover{border-bottom:1px solid var(--text)}
     .dek{color:var(--muted); font-size:14px; margin:0}
     footer{border-top:1px solid var(--line); margin-top:28px; padding:14px 0; color:var(--muted); font-size:13px}
+
+    /* Button */
+    .btn {
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#111;
+      font-weight:600;
+      text-decoration:none;
+      border:1px solid var(--accent);
+      transition:background .15s ease,color .15s ease,border-color .15s ease;
+    }
+    .btn:hover { background:transparent; color:var(--accent); border-color:var(--accent); }
   </style>
 </head>
 <body>
@@ -59,10 +69,17 @@
       <p class="bio">
         Paul F Lukens is a seasoned content creator with 9+ years of experience producing high-performing eCommerce content—including product reviews, buying guides, and multimedia campaigns—for leading brands in the cigar and retail industry. A versatile storyteller, Paul combines editorial integrity with data-driven strategy to create engaging, SEO-focused content that resonates with both enthusiasts and newcomers. He brings a collaborative, results-oriented approach to every project, with a proven record of elevating brand voice and driving audience engagement across multiple platforms.
       </p>
-      <p class="contact">
-        <b>Contact:</b> <a href="mailto:lukens.pf@gmail.com">lukens.pf@gmail.com</a>
-        &nbsp;|&nbsp; <a href="https://linkedin.com/in/your-link" target="_blank" rel="noopener">LinkedIn</a>
+
+      <!-- contact area: LinkedIn + CTA button -->
+      <p>
+        <a href="https://linkedin.com/in/your-link" target="_blank" rel="noopener">LinkedIn</a>
       </p>
+      <a
+        class="btn"
+        href="mailto:lukens.pf@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Paul%2C%0A%0AI%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.%20Details%3A%0A-%20Scope%3A%20%0A-%20Timeline%3A%20%0A-%20Budget%3A%20%0A%0AThanks%2C%0A"
+      >
+        Let’s work together
+      </a>
     </header>
 
     <nav>
