@@ -6,33 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{
-      --bg:#0e0e0f; --surface:#171719; --text:#e9e9ea; --muted:#b9b9bd;
-      --accent:#d99b62; --line:#2a2a2d;
+      --bg:#0e0e0f; --surface:#151517; --text:#e9e9ea; --muted:#b9b9bd;
+      --accent:#d99b62; --line:#27272b;
     }
     *{box-sizing:border-box}
     body{
       margin:0; background:var(--bg); color:var(--text);
-      font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
     }
-    .wrap{max-width:860px; margin:0 auto; padding:40px 20px;}
+    .wrap{max-width:980px; margin:0 auto; padding:40px 20px;}
     header{margin-bottom:28px}
     h1{font-size:34px; margin:0 0 8px; letter-spacing:.2px}
-    .bio{color:var(--muted); margin:0 0 20px}
+    .bio{color:var(--muted); margin:0 0 18px}
     .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid #0000}
     .contact a:hover{border-bottom:1px solid var(--accent)}
-    nav{margin:22px 0 34px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 0}
+    nav{margin:22px 0 30px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 0}
     nav a{color:var(--muted); text-decoration:none; margin-right:16px; font-size:14px;}
     nav a:hover{color:var(--text)}
     section{padding:18px 0 6px; border-top:1px solid var(--line)}
     h2{font-size:18px; letter-spacing:.3px; text-transform:uppercase; color:#fff; margin:0 0 12px}
-    ul.list{list-style:none; padding:0; margin:0}
-    .item{padding:12px 0; display:flex; gap:12px; align-items:flex-start}
-    .bullet{width:8px; height:8px; margin-top:9px; border-radius:999px; background:var(--accent); flex:0 0 8px; opacity:.85}
-    .item a.title{color:var(--text); text-decoration:none; border-bottom:1px solid #0000; transition:border-color .18s ease;}
-    .item a.title:hover{border-bottom:1px solid var(--text)}
-    .dek{color:var(--muted); font-size:14px; margin-top:4px}
+
+    /* Card grid */
+    .grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media (max-width:620px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      display:flex; flex-direction:column;
+      transition:transform .12s ease, border-color .12s ease;
+    }
+    .card:hover{ transform:translateY(-2px); border-color:#333; }
+    .thumb{display:block; width:100%; height:0; padding-bottom:56%; background:#0b0b0c; position:relative; overflow:hidden}
+    .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    .card-body{padding:14px 14px 16px}
+    .title{
+      margin:0 0 6px; font-weight:600; line-height:1.35; font-size:16px;
+    }
+    .title a{color:var(--text); text-decoration:none; border-bottom:1px solid #0000}
+    .title a:hover{border-bottom:1px solid var(--text)}
+    .dek{color:var(--muted); font-size:14px; margin:0}
     footer{border-top:1px solid var(--line); margin-top:28px; padding:14px 0; color:var(--muted); font-size:13px}
-    @media (max-width:600px){ h1{font-size:26px} }
   </style>
 </head>
 <body>
@@ -57,112 +74,118 @@
     <!-- REVIEWS -->
     <section id="reviews">
       <h2>Reviews</h2>
-      <ul class="list">
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-partagas-y-nada-mas">
-               Quick Ash: Partagas Y Nada Mas
-            </a>
-            <div class="dek">Clean, contemporary Partagas profile—focused, modern construction and flavor pacing.</div>
+      <div class="grid">
+        <!-- Partagas Y Nada Mas -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-partagas-y-nada-mas" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/media_13a1dd79b5fb2bc2e1681196332907e96f6692abf.jpg?format=jpg&optimize=medium&width=750" alt="Partagas Y Nada Mas review cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-partagas-y-nada-mas" target="_blank" rel="noopener">Quick Ash: Partagas Y Nada Mas</a></h3>
+            <p class="dek">Clean, contemporary Partagas profile—focused, modern construction and flavor pacing.</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-perdomo-legacy-nicaraguan-shade-grown">
-               Quick Ash: Perdomo Legacy Nicaraguan Shade Grown
-            </a>
-            <div class="dek">Shade-grown balance with Perdomo’s signature polish; approachable, well-structured.</div>
+        </article>
+
+        <!-- Perdomo Legacy Nicaraguan Shade Grown -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-perdomo-legacy-nicaraguan-shade-grown" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/media_15d4277c8856ac2bdd7a32cb6fe43b1ecff0c0ef5.jpg?format=jpg&optimize=medium&width=750" alt="Perdomo Legacy Shade Grown review cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-perdomo-legacy-nicaraguan-shade-grown" target="_blank" rel="noopener">Quick Ash: Perdomo Legacy Nicaraguan Shade Grown</a></h3>
+            <p class="dek">Shade-grown balance with Perdomo’s signature polish; approachable, well-structured.</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-la-aurora-family-creed-fuerte-sol">
-               Quick Ash: La Aurora Family Creed Fuerte Sol
-            </a>
-            <div class="dek">Sun-forward intensity with La Aurora craftsmanship; dialed-in strength and detail.</div>
+        </article>
+
+        <!-- La Aurora Family Creed Fuerte Sol -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-la-aurora-family-creed-fuerte-sol" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/media_18f86db36496fff275cd2795217eb57d8d1313f6f.jpg?format=jpg&optimize=medium&width=750" alt="La Aurora Family Creed Fuerte Sol review cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigar-reviews/quick-ash-la-aurora-family-creed-fuerte-sol" target="_blank" rel="noopener">Quick Ash: La Aurora Family Creed Fuerte Sol</a></h3>
+            <p class="dek">Sun-forward intensity with La Aurora craftsmanship; dialed-in strength and detail.</p>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
 
     <!-- BUYING GUIDES -->
     <section id="buying-guides">
       <h2>Buying Guides</h2>
-      <ul class="list">
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/new-cigars-april-18-2022">
-               New Cigars – April 18, 2022
-            </a>
-            <div class="dek">Roundup of the latest cigar releases at that time—quick-hit impressions and highlights.</div>
+      <div class="grid">
+        <!-- New Cigars – April 18, 2022 -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/buying-guides/new-cigars-april-18-2022" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/buying-guides/media_1d04ea2e163d9ba7b215c8b81c58595a2afb12fed.jpeg?format=jpeg&optimize=medium&width=750" alt="Top New Cigars April 18, 2022 cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/new-cigars-april-18-2022" target="_blank" rel="noopener">New Cigars – April 18, 2022</a></h3>
+            <p class="dek">Roundup of the latest cigar releases at that time—quick-hit impressions and highlights.</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/connecticut-shade-cigars-guide">
-               Connecticut Shade Cigars Guide
-            </a>
-            <div class="dek">What “shade” actually means, where it works, and brands that execute it well.</div>
+        </article>
+
+        <!-- Connecticut Shade Guide -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/buying-guides/connecticut-shade-cigars-guide" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/buying-guides/media_194685decfab3c279d4aa92f657839aab29b88c7f.jpeg?format=jpeg&optimize=medium&width=750" alt="Connecticut Shade cigars guide cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/connecticut-shade-cigars-guide" target="_blank" rel="noopener">Connecticut Shade Cigars Guide</a></h3>
+            <p class="dek">What “shade” actually means, where it works, and brands that execute it well.</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/buying-guides/barrel-aged-cigars">
-               Barrel-Aged Cigars
-            </a>
-            <div class="dek">When barrel aging adds nuance vs. when it’s a label—how to tell the difference.</div>
+        </article>
+
+        <!-- Barrel-Aged Cigars -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/buying-guides/barrel-aged-cigars" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/buying-guides/media_180261869c607396f87901737a2949eb4643de434.jpeg?format=jpeg&optimize=medium&width=750" alt="Barrel-aged cigars guide cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/buying-guides/barrel-aged-cigars" target="_blank" rel="noopener">Barrel-Aged Cigars</a></h3>
+            <p class="dek">When barrel aging adds nuance vs. when it’s a label—how to tell the difference.</p>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
 
     <!-- EDUCATIONAL -->
     <section id="educational">
       <h2>Educational</h2>
-      <ul class="list">
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-big-ring-gauge-cigars">
-               5 Things About Big Ring Gauge Cigars
-            </a>
-            <div class="dek">Trade-offs in combustion, flavor concentration, and why larger isn’t always “more.”</div>
+      <div class="grid">
+        <!-- Big Ring Gauge -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-big-ring-gauge-cigars" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigars-101/media_1e4111a4c0ed4a21f548f1997253a20b108ad3d00.jpeg?format=jpeg&optimize=medium&width=750" alt="Big ring gauge cigars article cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-big-ring-gauge-cigars" target="_blank" rel="noopener">5 Things About Big Ring Gauge Cigars</a></h3>
+            <p class="dek">Trade-offs in combustion, flavor concentration, and why larger isn’t always “more.”</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-lancero-cigars">
-               5 Things About Lancero Cigars
-            </a>
-            <div class="dek">Wrapper-to-filler ratio, burn management, and who should reach for a lancero.</div>
+        </article>
+
+        <!-- Lancero -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-lancero-cigars" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigars-101/media_1a62743f9e2a1c951324ccf14426979c0775bc9c3.jpeg?format=jpeg&optimize=medium&width=750" alt="Lancero cigars article cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-about-lancero-cigars" target="_blank" rel="noopener">5 Things About Lancero Cigars</a></h3>
+            <p class="dek">Wrapper-to-filler ratio, burn management, and who should reach for a lancero.</p>
           </div>
-        </li>
-        <li class="item">
-          <span class="bullet" aria-hidden="true"></span>
-          <div>
-            <a class="title" target="_blank" rel="noopener"
-               href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-to-know-about-boutique-cigars">
-               5 Things to Know About Boutique Cigars
-            </a>
-            <div class="dek">A look at what makes boutique brands unique, and how they stand apart in the market.</div>
+        </article>
+
+        <!-- Boutique -->
+        <article class="card">
+          <a class="thumb" href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-to-know-about-boutique-cigars" target="_blank" rel="noopener">
+            <img src="https://www.famous-smoke.com/cigaradvisor/cigars-101/media_1411e3792a27a88a43439b0c94fff814edb1c1669.jpg?format=jpg&optimize=medium&width=750" alt="Boutique cigars article cover">
+          </a>
+          <div class="card-body">
+            <h3 class="title"><a href="https://www.famous-smoke.com/cigaradvisor/cigars-101/5-things-to-know-about-boutique-cigars" target="_blank" rel="noopener">5 Things to Know About Boutique Cigars</a></h3>
+            <p class="dek">What makes boutique brands unique—and how they stand apart in the market.</p>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
 
     <footer>
